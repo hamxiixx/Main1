@@ -1,0 +1,94 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+*{
+    font-size: 20px;
+}
+.statusbar-overlay {
+    background: #000000;
+}
+#map {
+    height: 100%;
+  }
+
+  :root {
+    /*
+    --f7-radio-active-color: var(--f7-theme-color);
+    */
+    --f7-radio-border-radius: 50%;
+  }
+  :root .theme-dark,
+  :root.theme-dark {
+    --f7-radio-inactive-color: rgba(255, 255, 255, 255);
+  }
+  .ios {
+    --f7-radio-size: 22px;
+    --f7-radio-border-width: 1px;
+    --f7-radio-extra-margin: 0px;
+    --f7-radio-inactive-color: white;
+  }
+  .md {
+    --f7-radio-size: 20px;
+    --f7-radio-border-width: 2px;
+    --f7-radio-extra-margin: 22px;
+    --f7-radio-inactive-color:white;
+  }
+  .aurora {
+    --f7-radio-size: 16px;
+    --f7-radio-border-width: 1px;
+    --f7-radio-extra-margin: 0px;
+    --f7-radio-inactive-color: white;
+  }
+  
+#convertButton{
+    align-self: center;
+}  
+.content-block ul {
+    list-style: none;
+}
+.content-block ul li{
+    font-size: 25px;
+    padding-top: 50px;
+    
+    color: azure;
+}
+.content-block a{
+    color: azure;
+}
+.content-block a:active{
+    color: chocolate;
+}
+#location{
+    font-family: fantasy;
+    font-size: 50px;
+    background-color: darkkhaki;
+    color: whitesmoke;
+    border-radius: 10px;
+    height: 350px;
+    justify-content: center;
+}
+#foot{
+    border-radius: 10px;
+    color: darkkhaki;
+}
+#weatherStat{
+    font-family: fantasy;
+    font-size: 100px;
+    background-color: darkkhaki;
+    color: whitesmoke;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: inherit;
+    padding: 10px 10px 10px 10px;
+}
+
+
+

@@ -1,0 +1,41 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="icon icon-back"></i>
+                <span>Back</span>
+            </a>
+        </div>
+        <div class="center sliding">Currency</div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="Currency" class="page">
+        <div class="page-content">
+            <div class="content-block">
+
+                <h1>Select your Currency</h1>
+                <select id="currencyList">
+
+                    <option value="EUR" >Euros</option>
+                    <option value="GBP" selected>Pounds</option>
+                    <option value="CAD">Canadian Dollars</option>
+
+                </select>
+
+                <input type="number" id="ammount" placeholder="Enter the ammount">
+                <p></p>
+                <button id="convertButton" class="col button button-raised button-fill button-round" onclick=userInput()>Convert into Dollars</button>
+                <h2 id="result">Converted Currency</h2>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
