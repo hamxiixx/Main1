@@ -18,24 +18,45 @@
 <div class="pages">
     <div data-page="Currency" class="page">
         <div class="page-content">
-            <div class="content-block">
+            <div id="currencyDiv" class="content-block">
 
-                <h1>Select your Currency</h1>
-                <select id="currencyList">
+            
 
-                    <option value="EUR" >Euros</option>
-                    <option value="GBP" selected>Pounds</option>
-                    <option value="CAD">Canadian Dollars</option>
+                        <h2 id="currencyHead">Select your Currency</h2>
+                        <select id="currencyList" class="selectionList" required>
 
-                </select>
+                            <option value="EUR">Euros</option>
+                            <option value="GBP" selected>Pounds</option>
+                            <option value="CAD">Canadian Dollars</option>
 
-                <input type="number" id="ammount" placeholder="Enter the ammount">
-                <p></p>
-                <button id="convertButton" class="col button button-raised button-fill button-round" onclick=userInput()>Convert into Dollars</button>
-                <h2 id="result">Converted Currency</h2>
-                
+                        </select>
+                        <br><br>
+                        <input type="number" id="ammount" class="inputForm" placeholder="Enter the ammount">
+                        <p></p>
+                        <button id="convertButton" class="col button button-raised button-fill button-round"
+                            onclick=userInput()>Convert into Dollars</button>
+                        <h1 id="result" class="CurResult"></h1>
 
+                        <br><br><br><br>
+
+                        <h3>Convert Dollars into Local Currency</h3>
+
+                        <input type="number" id="ammount2" class="inputForm" placeholder="Enter the ammount of Dollars">
+                        <br><br>
+                        <select id="currencyList2" class="selectionList" required>
+
+                            <option value="EUR">Euros</option>
+                            <option value="GBP" selected>Pounds</option>
+                            <option value="CAD">Canadian Dollars</option>
+
+                        </select>
+                        <p></p>
+                        <button id="convertButton" class="col button button-raised button-fill button-round"
+                            onclick=userInput2()>Convert your Dollars</button>
+                        <h1 id="result2" class="CurResult"></h1>
+
+
+                </div>
             </div>
         </div>
     </div>
-</div>

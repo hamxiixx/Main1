@@ -156,7 +156,7 @@ function getCity() {
 
 function checkWeather() {
     var http = new XMLHttpRequest();
-    var url = 'http://api.openweathermap.org/data/2.5/weather?lat=53&lon=-7&appid=2cd730b86a546cea34483fe446c3469d';
+    var url = 'http://api.openweathermap.org/data/2.5/weather?lat=53&lon=-7&appid=2cd730b86a546cea34483fe446c3469d&units=metric';
     var new_url = setUrlParameter(url, 'lat', lat);
     new_url = setUrlParameter(new_url, 'lon', lon);
     
@@ -168,8 +168,11 @@ function checkWeather() {
         var responseJSON = JSON.parse(response);
 
         console.log(new_url);
+        console.log(responseJSON);
         console.log(responseJSON.weather["0"].description);
-        document.getElementById('weatherStat').innerHTML = responseJSON.weather["0"].description + " expected today";
+        document.getElementById('weatherStat').innerHTML = + responseJSON.main.temp + " °C"
+        document.getElementById('weatherExt').innerHTML = "<br><br>" +responseJSON.weather["0"].description + " expected today ";
+        document.getElementById('weatherExt2').innerHTML = "<br><br> Feels like : " + responseJSON.main.feels_like + " °C";
 
     }
 }
@@ -224,8 +227,47 @@ function userInput() {
         var responseCur = responseJSON.rates.USD;
         console.log(responseCur);
         var resultCur = str * responseCur;
-        document.getElementById('result').innerHTML = str + " " +currencySelect + " : " +resultCur + " Dollars";
+        document.getElementById('result').innerHTML = str + " " +currencySelect + " :<br> " +resultCur + " Dollars";
     }
+
+}
+
+function userInput2()
+{
+    var str = document.getElementById("ammount2").value;
+    console.log(str);
+
+    var currencySelect = document.getElementById("currencyList2").value;
+    console.log(currencySelect);
+
+    var http = new XMLHttpRequest();
+    const url = 'http://apilayer.net/api/live?access_key=69476a06b475ef54924513180d559281&currencies=EUR&source=USD&format=1';
+
+    var new_url = setUrlParameter(url,'currencies', currencySelect );
+    console.log(new_url)
+    http.open('GET', new_url);
+http.send();
+http.onreadystatechange = (e) => {
+		var response = http.responseText;
+        var responseJSON = JSON.parse(response); 
+       
+
+    //var responseCur = "responseJSON.quotes.USD" + currencySelect;
+    newCur = "USD"+currencySelect;
+    console.log(newCur);
+
+    var responseCur = responseJSON.quotes[newCur];
+
+    var resultCur = str*responseCur;
+
+        document.getElementById('result2').innerHTML =str +" Dollars : <br>"+
+        resultCur + " " + currencySelect;
+
+    
+
+
+}
+
 
 }
 
