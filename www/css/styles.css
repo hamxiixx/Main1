@@ -131,6 +131,13 @@
     background-color: darkkhaki;
     color: whitesmoke;
 }
+.toolbar a {
+    color: darkkhaki;
+}
+#welcome{
+    font-family: cursive;
+    font-size: 48px;
+}
 
 
 
